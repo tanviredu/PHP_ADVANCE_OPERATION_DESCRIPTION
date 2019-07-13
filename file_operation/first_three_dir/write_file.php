@@ -18,9 +18,12 @@
     // b-> use for all of them
     ////////////////////////////////////////////
 
-    $file = 'filetest.txt';
+   	$file = 'filetest.txt';
     if($handle=fopen($file, 'w')){
-
+    	fwrite($handle, 'abc');
+    	fwrite($handle, '123');
+    	$content = "my name is \n tanvir rahman ";
+    	fwrite($handle, $content);
     	
 
     fclose($handle);
@@ -28,7 +31,18 @@
 		echo "could not open file for writing";
 	}
 
+	// shortcut method for openng writing and every thing
 
+	#$filename = 'second.txt';
+	$filename = 'filetest.txt';
+	$content = "hello my name is tanvir rahman\n i am a php programmer \n
+	also  a django programmer \n also a machine learning student"$file = 'filetest.txt';
+
+	if($size=file_put_contents($filename, $content)){
+		// it willl bydefault overwrite the content
+
+		echo "A file with {$size} bytes has been created";
+	}
 
 
 ?>
