@@ -1,4 +1,6 @@
 <?php
+
+    //basic of file management in php
     
     echo __FILE__." <br />";    // show the location of the file
     echo __LINE__."<br />";   
